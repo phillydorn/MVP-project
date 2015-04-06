@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app='compare'>
+  <head>
+    <meta charset="utf-8" />
+    <title>Were they in a movie together?</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <script type ='application/javascript' src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type ='application/javascript' src="../bower_components/underscore/underscore-min.js"></script>
+     <script type ='application/javascript' src="scripts/app.js"></script>
+
+  </head>
+  <body>
+    <h1>Were they in a movie together?</h1>
+
+    <div ng-view></div>
+    <form class = "actor-input">
+      <h3>First actor:</h3>
+      <input type='text' name = 'actor1'>
+      <h3>Second Actor:</h3>
+      <input type='text' name = 'actor2'>
+      <button type = 'submit'>Submit</button>
+    </form>
+
+
+
+  </body>
+</html>
