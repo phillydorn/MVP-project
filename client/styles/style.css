@@ -1,0 +1,73 @@
+h1 {
+  color: white;
+  text-shadow: 2px 2px black;
+  text-align: center;
+}
+label {
+  font-size: 24px;
+}
+
+.actor1 {
+  float: left;
+  margin-left: 100px;
+}
+
+.actor2 {
+  margin-left: 600px;
+}
+
+.actor {
+  max-height: 300px;
+
+}
+
+.actor-image {
+  height: 250px;
+}
+
+.pic1 {
+  float: left;
+  padding: 0 16%;
+  width: 40%;
+}
+
+.pic2 {
+  float: left;
+  padding: 0 10%;
+  width: 40%;
+}
+
+body {
+  background-image: url('http://patdollard.com/wp-content/uploads/2014/02/HollywoodSunset.jpg');
+}
+
+.movie-container {
+  width: 90%;
+  background-color: white;
+  margin: 10px auto;
+  border-radius: 10px;
+  opacity: .8;
+  padding: 5px;
+  height: 260px;
+}
+
+.container {
+  clear: both;
+}
+
+.poster {
+  height: 250px;
+  float: left;
+  margin-right: 40px;
+  border-radius: 10px;
+}
+
+.movies h2 {
+  float: left;
+  margin-left: 40px;
+  font-size: 48px;
+  color: black;
+}
+.movies li {
+  clear: both;
+}
