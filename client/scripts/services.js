@@ -82,7 +82,6 @@ angular.module('compare.services', [])
       url: server + 'person/'+ id + '/images?' + apiKey
     })
     .then (function (resp) {
-      console.log('resp', resp)
       return resp.data.profiles[0].file_path;
     })
   }
@@ -93,7 +92,11 @@ angular.module('compare.services', [])
       url: server+'search/person?query='+actor+'&'+apiKey
     })
     .then(function(resp) {
-      return resp.data.results[0].id;
+      if (resp.data.results.length > 0) {
+        return resp.data.results[0].id;
+      } else {
+        console.log('doesnt exist')
+      }
     })
   }
 
@@ -116,7 +119,6 @@ angular.module('compare.services', [])
           }
         })
       })
-      console.log('results', results)
       return results;
     });
   }
