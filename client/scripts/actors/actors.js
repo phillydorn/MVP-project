@@ -21,14 +21,24 @@ angular.module('compare.actors', [])
     // $scope.getCredits();
   }
 
+
   $scope.getIds = function() {
     return Actors.getIds($scope.names.actor1, $scope.names.actor2)
     .then (function (ids) {
       $scope.id1 = ids[0];
       $scope.id2 = ids[1];
-    });
+      return ids;
+    })
+    .then(function (ids) {
+      return Actors.loadPics(ids)
+    })
+    .then (function (pics) {
+      console.log (pics)
+      $scope.pic1 = 'http://image.tmdb.org/t/p/original' + pics[0];
+      $scope.pic2 = 'http://image.tmdb.org/t/p/original' + pics[1];
+    })
+    ;
 
-    console.log('outside', $scope.id1)
 }
 
  $scope.findCommonMovies = function() {

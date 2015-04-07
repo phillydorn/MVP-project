@@ -61,11 +61,30 @@ angular.module('compare.services', [])
         this.fetchActorId(actor2)
         ])
       .then (function(ids){
-        console.log('inside', ids)
         that.ids = ids;
         return ids;
       })
     }
+  }
+  var loadPics = function (ids) {
+    return $q.all([
+      this.loadPic(ids[0]),
+      this.loadPic(ids[1])
+      ])
+    .then (function (pics) {
+      return pics;
+    })
+  }
+
+  var loadPic = function (id) {
+    return $http({
+      method: 'GET',
+      url: server + 'person/'+ id + '/images?' + apiKey
+    })
+    .then (function (resp) {
+      console.log('resp', resp)
+      return resp.data.profiles[0].file_path;
+    })
   }
 
   var fetchActorId = function (actor) {
@@ -113,6 +132,8 @@ angular.module('compare.services', [])
   }
 
   return {
+    loadPics: loadPics,
+    loadPic: loadPic,
     fetchActorId : fetchActorId,
     getIds: getIds,
     ids: ids,
