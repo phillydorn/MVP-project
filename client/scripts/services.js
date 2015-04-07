@@ -3,14 +3,11 @@ angular.module('compare.services', [])
 .factory('Movies', function($http, $q) {
 
   var findCommonMovies = function(Actors) {
-    console.log('1');
     return this.getCredits(Actors);
   }
 
 
   var getCredits = function(Actors) {
-    console.log('2');
-
     return $q.all([
       this.getActorCredits(Actors.ids[0]),
       this.getActorCredits(Actors.ids[1])
@@ -82,35 +79,30 @@ angular.module('compare.services', [])
   }
 
  var findCommonMovies = function(id1, id2) {
-    console.log('1');
     return this.getCredits(id1, id2);
   }
 
 
   var getCredits = function(id1, id2) {
-    console.log('2');
-
     return $q.all([
       this.getActorCredits(id1),
       this.getActorCredits(id2)
       ])
     .then (function (credits) {
       var results = [];
-      angular.forEach(credits[0], function (movie1) {
-        angular.forEach(credits[1],function (movie2){
+      angular.forEach(credits[0].cast, function (movie1) {
+        angular.forEach(credits[1].cast,function (movie2){
           if (movie1.id === movie2.id) {
             results.push(movie1);
           }
         })
       })
       console.log('results', results)
-      return results[5];
+      return results;
     });
   }
 
   var getActorCredits = function(id) {
-    console.log('3');
-
     return $http({
       method: 'GET',
       url: server + 'person/' + id + '/movie_credits?' + apiKey
