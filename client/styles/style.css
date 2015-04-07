@@ -23,6 +23,7 @@ label {
 
 .actor-image {
   height: 250px;
+  float: left;
 }
 
 .pic1 {
@@ -63,7 +64,7 @@ body {
 }
 
 .movies h2 {
-  float: left;
+  /*float: left;*/
   margin-left: 40px;
   font-size: 48px;
   color: black;
