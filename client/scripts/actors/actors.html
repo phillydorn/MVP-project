@@ -2,12 +2,16 @@
   <form class = "actor-input" name = 'actor-input' ng-submit = 'compareMovies()'>
     <div class="actor actor1">
     <label>First Actor:<input type='text' ng-model = 'names.actor1'></label>
-    <br /><img class = "actor-image" src = {{pic1}}>
   </div>
   <div class = "actor actor2">
     <label>Second Actor:<input type='text' ng-model = 'names.actor2'></label>
     <button type = 'submit'>Submit</button>
-    <br /><img class = "actor-image"src = {{pic2}}>
+  </div>
+  <div class = "pic1">
+   <img class = "actor-image" src = {{pic1}}>
+ </div>
+ <div class="pic2">
+    <img class = "actor-image"src = {{pic2}}>
   </div>
   </form>
 </div>
@@ -16,7 +20,7 @@
   <div class=  "movies" ng-model = "movies">
     <ul>
       <li ng-repeat= "movie in data.movies">
-        <div>
+        <div class = "movie-container col-md-4">
         <img class = "poster" src = 'http://image.tmdb.org/t/p/original{{movie.poster_path}}'>
         <h2>{{movie.title}}</h2>
       </div>

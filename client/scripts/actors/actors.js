@@ -33,7 +33,6 @@ angular.module('compare.actors', [])
       return Actors.loadPics(ids)
     })
     .then (function (pics) {
-      console.log (pics)
       $scope.pic1 = 'http://image.tmdb.org/t/p/original' + pics[0];
       $scope.pic2 = 'http://image.tmdb.org/t/p/original' + pics[1];
     })
@@ -44,7 +43,6 @@ angular.module('compare.actors', [])
  $scope.findCommonMovies = function() {
      Actors.findCommonMovies($scope.id1, $scope.id2)
     .then(function(movies){
-      console.log('movies', movies)
       $scope.data.movies = movies;
     })
   }

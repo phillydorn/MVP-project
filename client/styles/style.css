@@ -22,14 +22,34 @@ label {
 }
 
 .actors {
-  border: 1px solid black;
 }
 .actor-image {
   height: 250px;
 }
 
+.pic1 {
+  float: left;
+  padding: 0 16%;
+  width: 40%;
+}
+
+.pic2 {
+  float: left;
+  padding: 0 10%;
+  width: 40%;
+}
+
 body {
   background-image: url('http://patdollard.com/wp-content/uploads/2014/02/HollywoodSunset.jpg');
+}
+
+.movie-container {
+  width: 80%;
+  background-color: white;
+  margin: 10px auto;
+  border-radius: 10px;
+  opacity: .8;
+  padding: 5px;
 }
 
 .container {
@@ -46,8 +66,7 @@ body {
   float: left;
   margin-left: 40px;
   font-size: 48px;
-  color: #B8F2D3;
-  text-shadow: 5px 5px black;
+  color: black;
 }
 .movies li {
   clear: both;
