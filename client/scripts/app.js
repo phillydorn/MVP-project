@@ -1,6 +1,5 @@
 angular.module('compare', [
   'compare.services',
-  'compare.movies',
   'compare.actors',
   'ngRoute'
 ])
