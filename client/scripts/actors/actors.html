@@ -19,10 +19,10 @@
 <div id = 'container'>
   <div class=  "movies" ng-model = "movies">
     <ul>
-      <li ng-repeat= "movie in data.movies">
+      <li ng-repeat= "movie in data.movies | orderBy : '-release_date'">
         <div class = "movie-container col-md-4">
         <img class = "poster" src = 'http://image.tmdb.org/t/p/original{{movie.poster_path}}'>
-        <h2>{{movie.title}}</h2>
+        <h2>{{movie.title}}  ({{movie.release_date.slice(0,4)}})</h2>
       </div>
       </li>
     </ul>
