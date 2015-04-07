@@ -48,6 +48,7 @@ body {
   border-radius: 10px;
   opacity: .8;
   padding: 5px;
+  height: 260px;
 }
 
 .container {
@@ -58,6 +59,7 @@ body {
   height: 250px;
   float: left;
   margin-right: 40px;
+  border-radius: 10px;
 }
 
 .movies h2 {

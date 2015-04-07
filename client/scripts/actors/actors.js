@@ -44,6 +44,7 @@ angular.module('compare.actors', [])
      Actors.findCommonMovies($scope.id1, $scope.id2)
     .then(function(movies){
       $scope.data.movies = movies;
+      console.log(movies)
     })
   }
 

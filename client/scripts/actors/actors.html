@@ -21,7 +21,8 @@
     <ul>
       <li ng-repeat= "movie in data.movies | orderBy : '-release_date'">
         <div class = "movie-container col-md-4">
-        <img class = "poster" src = 'http://image.tmdb.org/t/p/original{{movie.poster_path}}'>
+        <img ng-if = "movie.poster_path.length>0" class = "poster" src = 'http://image.tmdb.org/t/p/original{{movie.poster_path}}'>
+        <img ng-if = "movie.poster_path.length == null" class = "poster" src = "http://www.divxonline.ro/no-poster.jpg">
         <h2>{{movie.title}}  ({{movie.release_date.slice(0,4)}})</h2>
       </div>
       </li>
@@ -29,6 +30,6 @@
   </div>
   <div ng-if = "data.movies.length === 0" class = "movies movie-container col-md-4">
       <img class = "poster" src = 'http://www.wpclipart.com/signs_symbol/alphabets_numbers/outlined_alphabet/red_capitol/capitol_X_red.png'>
-      <h2>NO MOVIES TOGETHER!!!</h2>
+      <h2>No Shared Movies</h2>
   </div>
 </div>
